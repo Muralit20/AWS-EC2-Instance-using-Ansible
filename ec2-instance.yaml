@@ -1,0 +1,17 @@
+---
+- name: Launching the aws instance
+  hosts: localhost
+  tasks:
+    - name: Launching the aws instance
+      ec2:
+        key_name: xxxxxxxxx
+        region: ap-south-1
+        instance_type: t2.micro
+        image: ami-xxxxxxxxxx
+        wait: yes
+        group: MySG
+        vpc_subnet_id: xxxxxxxxxx
+        assign_public_ip: yes
+        count: 1
+        aws_access_key: xxxxxxxxxxxxxxxxxxxx
+        aws_secret_key: xxxxxxxxxxxxxxxxxxxx
